@@ -19,10 +19,10 @@
     padding-bottom: 20px;
     padding-left: 40px;
     padding-right: 40px;
-    background:rgb(1, 189, 173);
+    background: #67b0d1;
     font-style: bold;
-    font-size: 40px;
-    font-family: math;
+    font-size: 30px;
+    font-family: sans-serif;
   }
   
   .right-align {
@@ -31,7 +31,7 @@
   }
   
   .box {
-    background: white;
+    background: rgba(255, 255, 255, 0.2);
   }
   
   .padding_1 {
@@ -62,21 +62,103 @@
     padding-top: 40px;
     padding-left: 10px;
     font-size: 40px;
-    font-family: math;
-    font-style: bold;
-    color: rgb(1, 189, 173);
+    font-family: "Open Sans", sans-serif;
+    color: #444444;
   }
   
   .h2 {
     padding-top: 20px;
     padding-left: 10px;
     font-size: 20px;
-    font-family: math;
-    font-style: bold;
-    color: rgb(1, 189, 173);
+    font-family: "Open Sans", sans-serif;
+    color:#67b0d1;
   }
   
   .site_font {
-    font-family: math;
+    font-family: "Open Sans", sans-serif;
     font-size: 18px;
   }
+  
+/* styling for visualization pages
+/* Giving the body the specified background color, adding font sizes for the h1 and h3 elements we'll be using */
+
+.navbar {
+  padding: 25px;
+}
+
+.grey-background{
+  background-color: lightgrey;
+}
+
+.white-background{
+  background-color: white;
+}
+
+/* Styling the header, giving it a height, a background color, and some top padding */
+.web-title {
+  height: 100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  background: #67b0d1;
+  font-style: bold;
+  font-size: 40px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.right-align {
+  position: absolute;
+  right: 5%;
+}
+
+.box {
+  background: white;
+}
+
+.padding_1 {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.left_padding {
+  padding-left: 10px;
+}
+
+.right_padding {
+  padding-right: 10px;
+}
+
+.top_padding {
+  padding-top: 10px;
+}
+
+.bottom_padding {
+  padding-bottom: 10px;
+}
+
+
+.header {
+  padding-top: 40px;
+  padding-left: 10px;
+  font-size: 40px;
+  font-family: "Open Sans", sans-serif;
+  font-style: bold;
+  color: #67b0d1;
+}
+
+.h2 {
+  padding-top: 20px;
+  padding-left: 10px;
+  font-size: 20px;
+  font-family: math;
+  font-style: bold;
+  color: #67b0d1;
+}
+
+.site_font {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+}
