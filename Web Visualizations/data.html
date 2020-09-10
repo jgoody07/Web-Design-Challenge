@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Data</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="assets/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="reset.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+<style>
+
+
+  :root {
+      --bg-table-stripe: #f6f6f5;
+      --b-table: #e3e3e2;
+      --caption: #242423;
+  }
+  
+  table {
+      background-color: white;
+      border-collapse:collapse;
+      font-family: Arial, Helvetica, sans-serif
+  }
+  
+  th {
+      text-align:left
+  }
+  
+  .dcf-txt-center {
+        text-align: center!important
+      }
+  
+      .dcf-txt-left {
+        text-align: left!important
+      }
+  
+      .dcf-txt-right {
+        text-align: right!important
+      }
+      
+  .dcf-table caption {
+        color: var(--caption);
+        font-size: 1.13em;
+        font-weight: 700;
+        padding-bottom: .56rem
+      }
+  
+      .dcf-table thead {
+        font-size: .84em
+      }
+  
+      .dcf-table tbody {
+        border-bottom: 1px solid var(--b-table);
+        border-top: 1px solid var(--b-table);
+        font-size: .84em
+      }
+  
+      .dcf-table tfoot {
+        font-size: .84em
+      }
+  
+      .dcf-table td, .dcf-table th {
+        padding-right: 1.78em
+      }
+  
+      .dcf-table-bordered, .dcf-table-bordered td, .dcf-table-bordered th {
+        border: 2px solid var(--b-table)
+      }
+  
+      .dcf-table-bordered td, .dcf-table-bordered th, .dcf-table-striped td, .dcf-table-striped th {
+        padding-left: 1em;
+        padding-right: 1em
+      }
+  
+      .dcf-table-bordered tr:not(:last-child), .dcf-table-striped tr:not(:last-child) {
+        border-bottom: 1px solid var(--b-table)
+      }
+  
+      .dcf-table-striped tbody tr:nth-of-type(2n) {
+        background-color: var(--bg-table-stripe)
+      }
+  
+      .dcf-table thead td, .dcf-table thead th {
+        padding-bottom: .75em;
+        vertical-align: bottom
+      }
+  
+      .dcf-table tbody td, .dcf-table tbody th, .dcf-table tfoot td, .dcf-table tfoot th {
+        padding-top: .75em;
+        vertical-align: top
+      }
+  
+      .dcf-table tbody td, .dcf-table tbody th {
+        padding-bottom: .75em
+      }
+  
+      .dcf-table-bordered thead th {
+        padding-top: 1.33em
+      }
+  
+      .dcf-wrapper-table-scroll {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        left: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        padding-bottom: 1em;
+        position: relative;
+        right: 50%;
+        width: 100vw
+      }
+  
+      @media only screen and (max-width:42.09em) {
+        .dcf-table-responsive thead {
+          clip: rect(0 0 0 0);
+          -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+          height: 1px;
+          overflow: hidden;
+          position: absolute;
+          width: 1px;
+          white-space: nowrap
+        }
+        .dcf-table-responsive tr {
+          display: block
+        }
+        .dcf-table-responsive td {
+          -webkit-column-gap: 3.16vw;
+          -moz-column-gap: 3.16vw;
+          column-gap: 3.16vw;
+          display: grid;
+          grid-template-columns: 1fr 2fr;
+          text-align: left!important
+        }
+        .dcf-table-responsive.dcf-table-bordered, .dcf-table-responsive.dcf-table-bordered thead th {
+          border-width: 0
+        }
+        .dcf-table-responsive.dcf-table-bordered tbody td {
+          border-top-width: 0
+        }
+        .dcf-table-responsive:not(.dcf-table-bordered) tbody tr {
+          padding-bottom: .75em
+        }
+        .dcf-table-responsive:not(.dcf-table-bordered) tbody td {
+          padding-bottom: 0
+        }
+        .dcf-table-responsive:not(.dcf-table-bordered):not(.dcf-table-striped) tbody td {
+          padding-right: 0
+        }
+        .dcf-table-responsive.dcf-table-bordered tbody tr:last-child td:last-child {
+          border-bottom-width: 0
+        }
+        .dcf-table-responsive tbody td:before {
+          content: attr(data-label);
+          float: left;
+          font-weight: 700;
+          padding-right: 1.78em
+        }
+      }
+  
+  .dcf-overflow-x-auto {
+        overflow-x: auto!important;
+        -webkit-overflow-scrolling: touch;
+        padding-left: 40px;
+      }
+      
+  </style>
+</head>
+
+<body style="background-image:url('./assets/img/brooks-main.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+
+  <!-- -----------------Navigation Bar----------------------------------------------- -->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div>
+      <a class="web-title" style="color:white" href="index.html">Brooks Running</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+      
+    <div class="collapse navbar-collapse right-align shadow p-3 mb-5 bg-white rounded" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+            Plots
+          </a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+            <a class="dropdown-item" href="pricing.html">Pricing</a>
+            <a class="dropdown-item" href="Experience.html">Experience</a>
+            <a class="dropdown-item" href="weight.html">Weight vs. Mid-sole drop</a>
+            <a class="dropdown-item" href="model_experience.html">Number of Shoes per Experience</a>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="data.html">Data</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="comparison.html">Comparison</a>
+        </li>              
+      </ul>
+    </div>
+
+  </nav>
+</br>
+</br>
+</br>
+
+<!-- ---------------- Table Data --------------------------------------- -->
+<div class="dcf-overflow-x-auto">
+  <table class="dcf-table dcf-table-bordered dcf-table-striped dcf-w-100%">
+    <caption>Brooks Running Shoe Data</caption>
+    <thead>
+      <tr>
+        <th data-label="Name" scope="col">Name</th>
+        <th data-label="Price" scope="col">Price</th>
+        <th data-label="Support" scope="col">Support</th>
+        <th data-label="Experience" scope="col">Experience</th>
+        <th data-label="Surface" scope="col">Surface</th>
+        <th data-label="Midsole Drop(mm)" scope="col">Midsole Drop(mm)</th>
+        <th data-label="Weight(g)" scope="col">Weight(g)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th data-label="Name" scope="row">Hyperion Elite</th>
+        <td data-label="Price">250</td>
+        <td data-label="Support">Neutral</td>
+        <td data-label="Experience">Speed</td>
+        <td data-label="Surface">Road</td>
+        <td data-label="Midsole Drop(mm)">8</td>
+        <td data-label="Weight(g)">195.6</td>
+      </tr>
+      <tr>
+        <th data-label="Name" scope="row">Beast 20</th>
+        <td data-label="Price">160</td>
+        <td data-label="Support">Max Support</td>
+        <td data-label="Experience">Cushion</td>
+        <td data-label="Surface">Road</td>
+        <td data-label="Midsole Drop(mm)">12</td>
+        <td data-label="Weight(g)">331.7</td>
+      </tr>
+      <tr>
+        <th data-label="Name" scope="row">Cascadia 15 GTX</th>
+        <td data-label="Price">160</td>
+        <td data-label="Support">Neutral</td>
+        <td data-label="Experience">Cushion</td>
+        <td data-label="Surface">Trail</td>
+        <td data-label="Midsole Drop(mm)">8</td>
+        <td data-label="Weight(g)">331.7</td>
+      </tr>
+      <tr>
+        <th data-label="Name" scope="row">Catamount</th>
+        <td data-label="Price">160</td>
+        <td data-label="Support">Neutral</td>
+        <td data-label="Experience">Speed</td>
+        <td data-label="Surface">Trail</td>
+        <td data-label="Midsole Drop(mm)"></td>
+        <td data-label="Weight(g)">263.7</td>
+      </tr>
+      <tr>
+        <th data-label="Name" scope="row">Transcend 7</th>
+        <td data-label="Price">160</td>
+        <td data-label="Support">Support</td>
+        <td data-label="Experience">Cushion</td>
+        <td data-label="Surface">Road</td>
+        <td data-label="Midsole Drop(mm)">10</td>
+        <td data-label="Weight(g)">303.3</td>
+      </tr>
+      <tr>
+        <th data-label="Name" scope="row">Bedlam 3</th>
+        <td data-label="Price">150</td>
+        <td data-label="Support">Support</td>
+        <td data-label="Experience">Energize</td>
+        <td data-label="Surface">Road</td>
+        <td data-label="Midsole Drop(mm)">8</td>
+        <td data-label="Weight(g)">306.2</td>
+      </tr>
+      <tr>
+        <th data-label="Name" scope="row">Glycerin 18</th>
+        <td data-label="Price">150</td>
+        <td data-label="Support">Neutral</td>
+        <td data-label="Experience">Cushion</td>
+        <td data-label="Surface">Road</td>
+        <td data-label="Midsole Drop(mm)">10</td>
+        <td data-label="Weight(g)">289.2</td>
+      </tr>
+      <tr>
+        <th data-label="Name" scope="row">Hyperion Tempo</th>
+        <td data-label="Price">150</td>
+        <td data-label="Support">Neutral</td>
+        <td data-label="Experience">Speed</td>
+        <td data-label="Surface">Road</td>
+        <td data-label="Midsole Drop(mm)">8</td>
+        <td data-label="Weight(g)">207</td>
+      </tr>
+      <tr>
+        <th data-label="Name" scope="row">Levitate 4</th>
+        <td data-label="Price">150</td>
+        <td data-label="Support">Neutral</td>
+        <td data-label="Experience">Energize</td>
+        <td data-label="Surface">Road</td>
+        <td data-label="Midsole Drop(mm)">8</td>
+        <td data-label="Weight(g)">292</td>
+      </tr>
+      <tr>
+        <th data-label="Name" scope="row">Caldera 4</th>
+        <td data-label="Price">140</td>
+        <td data-label="Support">Neutral</td>
+        <td data-label="Experience">Energize</td>
+        <td data-label="Surface">Trail</td>
+        <td data-label="Midsole Drop(mm)">4</td>
+        <td data-label="Weight(g)">283.5</td>
+      </tr>
+      <tr>
+        <th data-label="Name" scope="row">Addiction 14</th>
+        <td data-label="Price">130</td>
+        <td data-label="Support">Max Support</td>
+        <td data-label="Experience">Cushion</td>
+        <td data-label="Surface">Road</td>
+        <td data-label="Midsole Drop(mm)">12</td>
+        <td data-label="Weight(g)">357.2</td>
+      </tr>
+      <tr>
+        <th data-label="Name" scope="row">Adrenaline GTS 20</th>
+        <td data-label="Price">130</td>
+        <td data-label="Support">Support</td>
+        <td data-label="Experience">Cushion</td>
+        <td data-label="Surface">Road</td>
+        <td data-label="Midsole Drop(mm)">12</td>
+        <td data-label="Weight(g)">300.5</td>
+      </tr>
+      <tr>
+        <th data-label="Name" scope="row">Cascadia 15</th>
+        <td data-label="Price">130</td>
+        <td data-label="Support">Neutral</td>
+        <td data-label="Experience">Cushion</td>
+        <td data-label="Surface">Trail</td>
+        <td data-label="Midsole Drop(mm)">8</td>
+        <td data-label="Weight(g)">311.8</td>
+      </tr>
+      <tr>
+        <th data-label="Name" scope="row">Dyad 11</th>
+        <td data-label="Price">130</td>
+        <td data-label="Support">Neutral</td>
+        <td data-label="Experience">Cushion</td>
+        <td data-label="Surface">Road</td>
+        <td data-label="Midsole Drop(mm)">10</td>
+        <td data-label="Weight(g)">328.9</td>
+      </tr>
+      <tr>
+        <th data-label="Name" scope="row">Ghost 13</th>
+        <td data-label="Price">130</td>
+        <td data-label="Support">Neutral</td>
+        <td data-label="Experience">Cushion</td>
+        <td data-label="Surface">Road</td>
+        <td data-label="Midsole Drop(mm)">12</td>
+        <td data-label="Weight(g)">286.3</td>
+      </tr>
+      <tr>
+        <th data-label="Name" scope="row">Hyperion</th>
+        <td data-label="Price">130</td>
+        <td data-label="Support">Neutral</td>
+        <td data-label="Experience">Speed</td>
+        <td data-label="Surface">Road</td>
+        <td data-label="Midsole Drop(mm)">10</td>
+        <td data-label="Weight(g)">181.4</td>
+      </tr>
+      <tr>
+        <th data-label="Name" scope="row">Ricochet 2</th>
+        <td data-label="Price">120</td>
+        <td data-label="Support">Neutral</td>
+        <td data-label="Experience">Energize</td>
+        <td data-label="Surface">Road</td>
+        <td data-label="Midsole Drop(mm)">8</td>
+        <td data-label="Weight(g)">275</td>
+      </tr>
+      <tr>
+        <th data-label="Name" scope="row">Ricochet 2 LE</th>
+        <td data-label="Price">120</td>
+        <td data-label="Support">Neutral</td>
+        <td data-label="Experience">Energize</td>
+        <td data-label="Surface">Road</td>
+        <td data-label="Midsole Drop(mm)">8</td>
+        <td data-label="Weight(g)">275</td>
+      </tr>
+      <tr>
+        <th data-label="Name" scope="row">Asteria</th>
+        <td data-label="Price">110</td>
+        <td data-label="Support">Support</td>
+        <td data-label="Experience">Speed</td>
+        <td data-label="Surface">Road</td>
+        <td data-label="Midsole Drop(mm)">8</td>
+        <td data-label="Weight(g)">235.3</td>
+      </tr>
+      <tr>
+        <th data-label="Name" scope="row">Ravenna 11</th>
+        <td data-label="Price">110</td>
+        <td data-label="Support">Support</td>
+        <td data-label="Experience">Speed</td>
+        <td data-label="Surface">Road</td>
+        <td data-label="Midsole Drop(mm)">10</td>
+        <td data-label="Weight(g)">266.5</td>
+      </tr>
+      <tr>
+        <th data-label="Name" scope="row">Divide</th>
+        <td data-label="Price">100</td>
+        <td data-label="Support">Neutral</td>
+        <td data-label="Experience">Cushion</td>
+        <td data-label="Surface">Trail</td>
+        <td data-label="Midsole Drop(mm)">8</td>
+        <td data-label="Weight(g)">292</td>
+      </tr>
+      <tr>
+        <th data-label="Name" scope="row">Launch 7</th>
+        <td data-label="Price">100</td>
+        <td data-label="Support">Neutral</td>
+        <td data-label="Experience">Speed</td>
+        <td data-label="Surface">Road</td>
+        <td data-label="Midsole Drop(mm)">10</td>
+        <td data-label="Weight(g)">255.1</td>
+      </tr>
+      <tr>
+        <th data-label="Name" scope="row">Revel 4</th>
+        <td data-label="Price">100</td>
+        <td data-label="Support">Neutral</td>
+        <td data-label="Experience">Energize</td>
+        <td data-label="Surface">Road</td>
+        <td data-label="Midsole Drop(mm)">8</td>
+        <td data-label="Weight(g)">252.3</td>
+      </tr>
+      <tr>
+        <th data-label="Name" scope="row">PureFlow 7</th>
+        <td data-label="Price">90</td>
+        <td data-label="Support">Neutral</td>
+        <td data-label="Experience">Connect</td>
+        <td data-label="Surface">Road</td>
+        <td data-label="Midsole Drop(mm)">4</td>
+        <td data-label="Weight(g)">252.3</td>
+      </tr>
+      <tr>
+        <th data-label="Name" scope="row">PureGrit 8</th>
+        <td data-label="Price">78</td>
+        <td data-label="Support">Neutral</td>
+        <td data-label="Experience">Connect</td>
+        <td data-label="Surface">Trail</td>
+        <td data-label="Midsole Drop(mm)">4</td>
+        <td data-label="Weight(g)">263.7</td>
+      </tr>
+      <tr>
+        <th data-label="Name" scope="row">Anthem 3</th>
+        <td data-label="Price">69.95</td>
+        <td data-label="Support">Neutral</td>
+        <td data-label="Experience">Cushion</td>
+        <td data-label="Surface">Road</td>
+        <td data-label="Midsole Drop(mm)">10</td>
+        <td data-label="Weight(g)">212.6</td>
+      </tr>
+    </tbody>
+  </table></div>
+  
+
+</body>
+
+
+
+</html>

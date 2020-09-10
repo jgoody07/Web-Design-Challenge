@@ -22,7 +22,7 @@
     background: #67b0d1;
     font-style: bold;
     font-size: 30px;
-    font-family: sans-serif;
+    font-family: Roboto, sans-serif;
   }
   
   .right-align {
@@ -62,7 +62,7 @@
     padding-top: 40px;
     padding-left: 10px;
     font-size: 40px;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
     color: #444444;
   }
   
@@ -70,12 +70,12 @@
     padding-top: 20px;
     padding-left: 10px;
     font-size: 20px;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
     color:#67b0d1;
   }
   
   .site_font {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 18px;
   }
   
@@ -87,7 +87,7 @@
 }
 
 .grey-background{
-  background-color: lightgrey;
+  background-color: white; 
 }
 
 .white-background{
@@ -104,7 +104,7 @@
   background: #67b0d1;
   font-style: bold;
   font-size: 40px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .right-align {
@@ -113,7 +113,7 @@
 }
 
 .box {
-  background: white;
+  background: transparent;
 }
 
 .padding_1 {
@@ -144,7 +144,7 @@
   padding-top: 40px;
   padding-left: 10px;
   font-size: 40px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: bold;
   color: #67b0d1;
 }
@@ -153,12 +153,12 @@
   padding-top: 20px;
   padding-left: 10px;
   font-size: 20px;
-  font-family: math;
+  font-family:  "Roboto", sans-serif;
   font-style: bold;
   color: #67b0d1;
 }
 
 .site_font {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
 }
