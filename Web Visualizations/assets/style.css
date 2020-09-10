@@ -79,6 +79,12 @@
     font-size: 18px;
   }
   
+  @media (max-width: 768px) {
+    #header.header-scrolled {
+      padding: 15px 0;
+    }
+  }
+
 /* styling for visualization pages
 /* Giving the body the specified background color, adding font sizes for the h1 and h3 elements we'll be using */
 
@@ -103,7 +109,7 @@
   padding-right: 40px;
   background: #67b0d1;
   font-style: bold;
-  font-size: 40px;
+  font-size: 30px;
   font-family: "Roboto", sans-serif;
 }
 
